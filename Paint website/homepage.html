@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,715;1,14..32,715&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    /* border: 2px solid gold; */
+    flex-direction: column;
+    margin: 0%;
+    gap: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    position: sticky;
+    top: 0; 
+    background-color: rgb(0, 0, 0);
+    gap: 70px;
+    z-index: 1000; /* Optional: ensures it stays above other content */
+}
+
+.navbar-mid{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar-mid a{
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 715;
+    font-style: normal;
+    color: rgb(104, 102, 102);
+}
+.navbar-mid ul{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+}
+
+.section{
+    width: 100%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+}
+
+.section-left{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: center;
+    gap: 9px;
+    animation-name: fasih;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+   animation-timing-function: ease;
+}
+
+@keyframes fasih{
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+      
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+.section-left p{
+    color: gray;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.8rem;
+}
+
+.section-left h2{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8rem;
+}
+
+.section-right{
+height: 100%;    
+display: flex;
+justify-content: center;
+align-items: center;    
+width: 50%;
+
+}
+
+@keyframes rotate{
+    0%{
+       transform: rotateZ(0deg);
+    }
+    100%{
+      
+        transform:rotateZ(360deg);
+    }
+}
+
+.section-right img{
+    width: 60%;
+    border-radius: 20px;
+    z-index: -1;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+}
+
+.searchbar input[type="text"] {
+    padding: 6px;
+    margin-right: 10px;
+    border: none;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.navbar-mid li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.multi-slider {
+    position: relative;
+    max-width: 100%; /* Adjust as needed */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease;
+    /* background-color: lightgrey; */
+}
+
+.slide {
+    min-width: 20.33%; /* Adjust based on how many images to show */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 50%;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.products-class{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid black; */
+    background-color:rgb(231, 231, 231);
+
+    
+}
+.heading{
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #D52027;
+}
+
+
+ footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+.footer-top{
+    width: 70%;
+    display: flex;
+    margin: 40px;
+}
+.footer-bottom{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: rgb(158, 156, 156);
+}
+.footer-left-top{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    padding-top:40px;
+    margin-left: 6px;
+}
+.footer-left-top p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: rgb(146, 146, 146);
+}
+.footer-left-top li{
+    display: inline;
+}
+.footer-left-top ul{
+    display: flex;
+    gap: 15px;
+    /* margin-left: 21px; */
+}
+.footertoplogo{
+    display: flex;
+    margin-left: 5px;
+    gap: 5px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: bold;
+    font-style: normal;  
+    color: rgb(162, 162, 162);    
+}
+.footer-right-top{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,1fr);
+
+}
+.footer-grid-column{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer-grid-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+}
+.footer-grid-list a{
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: 100;
+    font-style: normal; 
+    font-size: 0.78rem; 
+    color: rgb(162, 162, 162);
+}
+.footer-grid-heading{
+    display: flex;
+    margin-top: 45px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: bold;
+    font-style: normal;  
+    color: rgb(162, 162, 162);
+}
+.footertoplogo{
+    display: flex;
+    gap: 6px;
+} 
+.footertoplogo img{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.feature-svg{
+    min-width: 20px;
+}
+.searchbar{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    background-color: #f5f5f5;
+
+    
+}
+.searchbar-left{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.searchbar-left img{
+    width: fit-content;
+    border-radius: 50%;
+    background-color: black;
+}
+.searchbar-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  
+}
+.searchbar-right img{
+    width: 40px;
+}
+.searchbar-mid{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.searchbar-right{
+    width: 20%;
+    display: flex;
+}
+
+.searchbar-mid input{
+    width: 90%;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.blog-section{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 56px;
+    background-color: rgb(253, 253, 253);
+}
+
+.main-blog-box{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.blog-box{
+    width: 370px;
+    height: 300px;
+    border: 4px solid rgb(234, 225, 225);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ </style>
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+dropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+        dropdownToggle.textContent = item.textContent;
+    });
+});
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    const slidesToShow = 3; // Adjust based on how many images to show
+    const maxSlideIndex = totalSlides - slidesToShow;
+
+    if (index > maxSlideIndex) currentSlide = maxSlideIndex;
+    if (index < 0) currentSlide = 0;
+
+    slides.style.transform = `translateX(-${(currentSlide / totalSlides) * 100}%)`;
+}
+
+function changeSlide(n) {
+    showSlide(currentSlide += n);
+}
+
+// Initialize the slider
+showSlide(currentSlide);
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="searchbar">
+            <div class="searchbar-left">
+                <img src="img/logo.PNG" alt="">
+                <!-- <h1>International Paint House</h1> -->
+            </div>
+            <div class="searchbar-mid">
+               
+                    <input type="text" placeholder="Search for Products">
+            </div>
+            <div class="searchbar-right">
+                <a href="#"><img src="img/cart.svg" alt="" class="feature-svg"></a>
+                <a href="#"><img src="img/wishlist.png" alt="" class="feature-svg"></a>
+            </div>
+        </div>
+    </div>
+        <div class="navbar">
+            <div class="navbar-left">
+            </div>
+            <div class="navbar-mid">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Categories</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item" data-value="Decorative-Paints">Decorative Paints</div>
+                            <div class="dropdown-item" data-value="Chalk-Zinc-Turpentine">Chalk-Zinc-Turpentine</div>
+                            <div class="dropdown-item" data-value="Polish-material">Polish material</div>
+                            <div class="dropdown-item" data-value="Water-proofing">Water proofing</div>
+                            <div class="dropdown-item" data-value="Heat-Insulation">Heat Insulation</div>
+                            <div class="dropdown-item" data-value="Joint-Cracks-Sealant">Joint Cracks Sealant</div>
+                            <div class="dropdown-item" data-value="SBR-Admixtures">SBR Admixtures</div>
+                            <div class="dropdown-item" data-value="Spray-Paints">Spray Paints</div>
+
+                        </div>
+                    </li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="navbar-right">
+            </div>
+        </div>
+    
+        <div class="section">
+            <div class="section-left">
+                <p>Over 50 years of excellency</p>
+                <h2>Internation Paint House</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non aperiam quibusdam asperiores aliquam iure corporis ipsam nobis veniam debitis tempora distinctio similique vitae, doloribus itaque cum. Modi voluptates accusantium quia porro amet odit commodi sapiente hic unde corporis qui, totam alias repellendus autem ex? Harum vel magni nulla distinctio voluptas.</p>
+            </div>   
+            <div class="section-right">
+                <img src="img/pexels-steve-1418595.jpg" alt="">
+            </div>
+        </div>
+<div class="products-class">
+<div class="heading">
+    <h2>Companies We deal with</h2>
+</div>
+<div class="multi-slider">
+    <div class="slides">
+        <div class="slide"><img src="img/kosarlac.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="img/gobis.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="img/reliance.jpg" alt="Image 3"></div>
+        <div class="slide"><img src="img/diamond.jpg" alt="Image 4"></div>
+        <div class="slide"><img src="img/dulux.jpg" alt="Image 5"></div>
+        <div class="slide"><img src="img/nelson.jpg" alt="Image 6"></div>
+        <div class="slide"><img src="img/reliable.png" alt="Image 7"></div>
+        <div class="slide"><img src="img/final touch.png" alt="Image 8"></div>
+
+    </div>
+    <button class="prev" onclick="changeSlide(-1)" style="background-color: rgb(180, 173, 173); color: black;">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)" style="background-color: rgb(180, 173, 173); color: black;">&#10095;</button>
+</div>
+</div>
+
+<div class="blog-section">
+    <div class="heading">
+        <h2 >Our Blog</h2>
+    </div>
+<div class="main-blog-box">
+    <div class="blog-box">Coming Soon</div>
+    <div class="blog-box">Coming Soon</div>
+    <div class="blog-box">Coming Soon</div>
+</div>
+
+</div>
+    <footer>
+        <div class="footer-top">
+           <div class="footer-left-top">
+               <div class="footertoplogo">
+               <img src="img/logo.PNG" alt="">
+               <h2>International Paint House</h2></div>
+               <p>Color Your World With Our Expertise</p>
+               <ul>
+               <li><a href="#"><img src="img/instagram.svg" alt="" class="feature-svg"></a></li>
+               <li><a href="#"><img src="img/linkedin.svg" alt="" class="feature-svg"></a></li>
+               <li><a href="#"><img src="img/twitter.svg" alt="" class="feature-svg"></a></li>
+               </ul>
+           </div>
+           <div class="footer-right-top">
+               <!-- column-1 -->
+               <div class="footer-grid-column">
+                   <div class="footer-grid-heading">
+                       Products
+                   </div>
+                   <ul class="footer-grid-list">
+                       <li><a href="#">Overview</a></li>
+                       <li><a href="#">Solutions</a></li>
+                       <li><a href="#">Pricing</a></li>
+                       <li><a href="#">Customers</a></li>
+                   </ul>
+               </div>
+               <!-- column-2 -->
+               <div class="footer-grid-column">
+                   <div class="footer-grid-heading">
+                       Company
+                   </div>
+                   <ul class="footer-grid-list">
+                       <li><a href="#">About</a></li>
+                       <li><a href="#">Investor Relations</a></li>
+                       <li><a href="#">Jobs</a></li>
+                       <li><a href="#">Press</a></li>
+                       <li><a href="#">Blogs</a></li>
+                   </ul>
+               </div>
+   
+                <!-- column-3-->
+                <div class="footer-grid-column">
+                   <div class="footer-grid-heading">
+                       Support
+                   </div>
+                   <ul class="footer-grid-list">
+                       <li><a href="#">Contact</a></li>
+                       <li><a href="#">Documentation</a></li>
+                       <li><a href="#">Chat</a></li>
+                       <li><a href="#">FAQ</a></li>
+                   </ul>
+               </div>
+               <!-- column-4 -->
+               <div class="footer-grid-column">
+                   <div class="footer-grid-heading">
+                       Legal
+                   </div>
+                   <ul class="footer-grid-list">
+                       <li><a href="#">Terms of Services</a></li>
+                       <li><a href="#">Privacy Policies</a></li>
+                       <li><a href="#">Cookie Setting</a></li>
+                   </ul>
+               </div>
+           </div>
+        </div>
+        <div class="footer-bottom">
+           <p>@ 2021 - Present International Paint House.All rights reserved</p>
+        </div>   
+       </footer>
+</body>
+</html>
