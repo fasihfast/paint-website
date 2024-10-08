@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "prompt-sync": "^4.2.0"
+  },
+  "scripts": {
+    "serve": "nodemon main.js"
+  }
+}
